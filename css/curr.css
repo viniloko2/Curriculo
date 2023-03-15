@@ -1,0 +1,23 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 1rem;
+}
+.autor{
+    color: blue;
+    border-bottom: dotted 1rem red;
+    font-size: larger;
+}
+.prof{
+    color: grey;
+}
+.desc{
+    color: #333333;
+}
+.contat{
+    border: solid black;
+    padding: 1rem;
+    text-align: center;
+}
+.contat li{
+    text-align: left;
+}
