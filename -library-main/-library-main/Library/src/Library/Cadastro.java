@@ -16,16 +16,8 @@ public class Cadastro {
             System.out.println("Não há multa a ser paga para: " + empresta.getNome());
         }
     }
-
-	public ArrayList<Pessoa> getPessoa() {
-		return pessoa;
-	}
-
-	public void setPessoa(ArrayList<Pessoa> pessoa) {
-		this.pessoa = pessoa;
-	}
-
-	public void AdicionarPessoa(Pessoa newpessoa) {
+    
+    public void AdicionarPessoa(Pessoa newpessoa) {
     	pessoa.add(newpessoa);
     	System.out.println(newpessoa.getNome() + " adicionado com sucesso");
     }

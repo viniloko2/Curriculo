@@ -4,28 +4,11 @@ import java.util.ArrayList;
 
 public class Estoque implements Controle {
 	
-	private ArrayList<Item> livros = new ArrayList<>();
-    private ArrayList<Itemm> Artigo = new ArrayList<>();
+	private ArrayList<Item> livros = new ArrayList<>();    
 	private int contadorDias;
     private int Atraso;
 
-    public ArrayList<Item> getLivros() {
-        return livros;
-    }
-
-    public void setLivros(ArrayList<Item> livros) {
-        this.livros = livros;
-    }
-
-    public ArrayList<Itemm> getArtigo() {
-        return Artigo;
-    }
-
-    public void setArtigo(ArrayList<Itemm> artigo) {
-        Artigo = artigo;
-    }
-
-    public void doar(Item livro, Pessoa doador) {
+	public void doar(Item livro, Pessoa doador) {
         livros.add(livro);
         System.out.println("Livro doado: " + livro.getTitulo() + "livro doado por " + doador.getNome());
     }
@@ -58,25 +41,31 @@ public class Estoque implements Controle {
                 System.out.println("Livro devolvido: " + livro.getTitulo() + " - Devolvido por: " + empresta.getNome());
             }
         }
-    public void deletaLivro(String livro) {
-        for(int i = 0; i< livros.size(); i++) {
-            if(livros.get(i).getTitulo().equals(livro)) {
-                livros.remove(i);
-            }else {
-                System.out.println("livro nao encontrado");
 
-            }
-        }
-    }
-    public void deletaAtigo(String artigo) {
-        for(int i = 0; i< Artigo.size(); i++) {
-            if(Artigo.get(i).getTitulo().equals(artigo)) {
-                Artigo.remove(i);
-            }else {
-                System.out.println("artigo nao encontrado");
+	@Override
+	public void adicionarLivro(Livro livro) {
+		livros.add(livro);
+		
+	}
 
-            }
-        }
+	@Override
+	public void adicionarArtigo(Artigo artigo) {
+		livros.add(artigo);
+		
+	}
+	
+	
+	public void alterarLivro(String titulo, String tituloAtualizado, String autor, int ano) {
+    	for(int i = 0; i < livros.size(); i++ ) {
+    		if(livros.get(i).getTitulo().equals(titulo)) {
+    			livros.get(i).setTitulo(tituloAtualizado);
+    			livros.get(i).setAutor(autor);
+    			livros.get(i).setAnoLivro(ano);
+    		}else {
+    			System.out.println("emprestante não encontrado");
+    		}
+    	}
+    	
     }
 
 
